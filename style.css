@@ -1,6 +1,13 @@
+body {
+  background-color: #eee;
+}
 .post .glyphicon {
 
   float : right;
   color : red;
   font-size: 15px;
+}
+.card {
+  background-color: white;
+  border: 1px solid silver;
 }

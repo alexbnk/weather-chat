@@ -65,9 +65,21 @@
 <script id="post1" type="text/x-handlebars-template">
 <div class="card post" data-id= {{ pid }} >
       <div class="card-block">
-        <h3 class="card-title">Special title treatment</h3>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h3 class="card-title">{{ city }}</h3><i class="glyphicon glyphicon-trash" aria-hidden="false"></i>
+        <p class="card-text">{{ weather_at_time }}C on {{ptime}}</p>
+        <div class="comments">
+          <ul class="comments_list">
+      {{#each comments}}
+        <li class="list-group-item">{{this}}</li>
+      {{/each}}
+    </ul>
+        </div>
+        <div class="input-group comments_controls">
+          <input type="text" class="form-control add-comment-input" placeholder="Comment about weather in {{ city }}">
+          <span class="input-group-btn">
+            <button class="btn btn-success post-comment" type="button">Comment</button>
+          </span>
+        </div>
       </div>
     </div>
   </script>

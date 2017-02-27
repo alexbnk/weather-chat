@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+      <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+      <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+      <title>Weather Chat - alexbnk</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="page-header">
+              <!-- <h1>Weather Chat <i class="fa fa-eye " aria-hidden="false"></i></h1> -->
+              <h1>Weather Chat </h1>
+            </div>
+
+
+
+
+
+            <div class="input-group">
+              <input type="text" id="search" class="form-control" placeholder="Enter City...">
+              <span class="input-group-btn">
+                <button class="btn btn-primary search" type="button">Get Temp</button>
+              </span>
+            </div>
+
+            <div id="chat">
+            </div>
+
+          </div>
+        </div>
+
+
+
+  </div>
+
+
+<!-- templates here  -->
+
+<script id="post" type="text/x-handlebars-template">
+  <div class="post" data-id= {{ pid }} >
+    <h3> {{ city }} </h3>
+    <i class="glyphicon glyphicon-trash" aria-hidden="false"></i>
+    <h4>{{ weather_at_time }}C on {{ptime}}</h4>
+    <div class="comments">
+      <ul class="comments_list">
+  {{#each comments}}
+    <li>{{this}}</li>
+  {{/each}}
+</ul>
+    </div>
+    <div class="input-group comments_controls">
+      <input type="text" class="form-control add-comment-input" placeholder="Comment about weather in {{ city }}">
+      <span class="input-group-btn">
+        <button class="btn btn-success post-comment" type="button">Comment</button>
+      </span>
+    </div>
+  </div>
+</script>
+
+<script id="post1" type="text/x-handlebars-template">
+<div class="card post" data-id= {{ pid }} >
+      <div class="card-block">
+        <h3 class="card-title">Special title treatment</h3>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </script>
+
+
+
+
+
+
+<!-- put required scripts down here :       -->
+    <script src="node_modules/jquery/dist/jquery.min.js"> </script>
+    <script src="node_modules/handlebars/dist/handlebars.js"></script>
+<!-- my scripts here  -->
+    <script src="randomId.js"></script>
+    <script src="apiKey.js"></script>
+    <script src="getWeather.js"></script>
+    <script src="compileTemplate.js"></script>
+    <script src="script.js"></script>
+    </body>
+    </html>

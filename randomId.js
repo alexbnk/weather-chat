@@ -8,4 +8,4 @@ var randomId = function(length) {
         str += chars[Math.floor(Math.random() * chars.length)];
     }
     return str;
-}
+};

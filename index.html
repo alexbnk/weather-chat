@@ -22,13 +22,13 @@
 
 
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Enter City...">
+              <input type="text" id="search" class="form-control" placeholder="Enter City...">
               <span class="input-group-btn">
                 <button class="btn btn-primary search" type="button">Get Temp</button>
               </span>
             </div>
 
-            <div class="results">
+            <div id="chat">
             </div>
 
           </div>
@@ -42,24 +42,35 @@
 <!-- templates here  -->
 
 <script id="post" type="text/x-handlebars-template">
-  <div class="post" data-id={{ pid }}>
-    <h3>{{ city }}</h3>
-    <h4>{{ weather_at_time }}</h4>
-    <div class="comments" data-id=data-id={{ pid }}>
+  <div class="post" data-id= {{ pid }} >
+    <h3> {{ city }} </h3>
+    <i class="glyphicon glyphicon-trash" aria-hidden="false"></i>
+    <h4>{{ weather_at_time }}C on {{ptime}}</h4>
+    <div class="comments">
+      <ul class="comments_list">
+  {{#each comments}}
+    <li>{{this}}</li>
+  {{/each}}
+</ul>
     </div>
-    <div class="postComment">
-      <input type="text" class="form-control comment_input" placeholder="Comment about the weather in {{ city }} ">
+    <div class="input-group comments_controls">
+      <input type="text" class="form-control add-comment-input" placeholder="Comment about weather in {{ city }}">
       <span class="input-group-btn">
-        <button class="btn btn-success btn_comment" type="button">Get Temp</button>
+        <button class="btn btn-success post-comment" type="button">Comment</button>
       </span>
     </div>
-  <div >
+  </div>
 </script>
 
-
-
-
-
+<script id="post1" type="text/x-handlebars-template">
+<div class="card post" data-id= {{ pid }} >
+      <div class="card-block">
+        <h3 class="card-title">Special title treatment</h3>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </script>
 
 
 
@@ -71,9 +82,9 @@
     <script src="node_modules/handlebars/dist/handlebars.js"></script>
 <!-- my scripts here  -->
     <script src="randomId.js"></script>
-    <script src="templates.js"></script>
     <script src="apiKey.js"></script>
     <script src="getWeather.js"></script>
+    <script src="compileTemplate.js"></script>
     <script src="script.js"></script>
     </body>
     </html>

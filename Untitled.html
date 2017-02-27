@@ -1,0 +1,24 @@
+<div class="post" data-id= {{ pid }} >
+  <h3> {{ city }} </h3>
+  <i class="glyphicon glyphicon-trash" aria-hidden="false"></i>
+  <h4>{{ weather_at_time }}C</h4>
+  <div class="comments">
+    <ul class="comments_list">
+{{#each comments}}
+  <li>{{this}}</li>
+{{/each}}
+</ul>
+  </div>
+  <div class="input-group">
+    <input type="text" class="form-control add-comment-input" placeholder="Comment about weather in {{ city }}">
+    <span class="input-group-btn">
+      <button class="btn btn-success post-comment" type="button">Comment</button>
+    </span>
+  </div>
+  <!-- <div class="postComment">
+    <input type="text" class="form-control comment_input" placeholder="Comment about the weather in {{ city }} ">
+    <span class="input-group-btn">
+      <button class="btn btn-success btn_comment" type="button">Comment</button>
+    </span>
+  </div> -->
+<div >
